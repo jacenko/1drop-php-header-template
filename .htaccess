@@ -1,0 +1,18 @@
+RewriteEngine On
+
+#Rewrite URL subdirectories with single words
+  RewriteRule ^home$ index.php?page=home [NC]
+  RewriteRule ^about$ index.php?page=about [NC]
+  RewriteRule ^media$ index.php?page=media [NC]
+  RewriteRule ^join$ index.php?page=join [NC]
+  RewriteRule ^faq$ index.php?page=faq [NC]
+  RewriteRule ^contact$ index.php?page=contact [NC]
+  RewriteRule ^404$ index.php?page=404 [NC]
+
+#Show 404 error page
+  ErrorDocument 404 /projects/frontend-example/index.php?page=404
+
+#Prevent image hotlinking
+  RewriteCond %{HTTP_REFERER} !^$
+  RewriteCond %{HTTP_REFERER} !^http://(www\.)?example\.com/.*$ [NC]
+  RewriteRule .*\.(gif|jpeg|png)$ http://www.example.com/unpleasantness.jpg [R,NC,L]

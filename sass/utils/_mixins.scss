@@ -1,0 +1,48 @@
+// Background color gradient animation (blue-teal)
+@mixin blue-gradient-animation() {
+  background: linear-gradient(270deg, #1fbfd0, #2473c2);
+  background-size: 400% 400%;
+
+  -webkit-animation: bga 30s ease infinite;
+  -moz-animation: bga 30s ease infinite;
+  -o-animation: bga 30s ease infinite;
+  animation: bga 30s ease infinite;
+
+  @-webkit-keyframes bga {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @-moz-keyframes bga {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @-o-keyframes bga {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @keyframes bga {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+}
+
+// Prevent element from being selectable (for menus)
+@mixin no-select() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// Rotate element by a set number of degrees
+@mixin rotate($degrees) {
+  -ms-transform: rotate($degrees); // IE 9
+  -webkit-transform: rotate($degrees); // Chrome, Safari, Opera
+  transform: rotate($degrees);
+}
